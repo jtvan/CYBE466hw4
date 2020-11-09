@@ -1,0 +1,32 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: Set a hostname
+    hostname:
+      name: zeus
+
+  - name: Install whois for passwd stuff
+    apt:
+      name: whois
+      state: present
+   
+  - name: PASSWORDS | Update loud passwd
+    user:
+      name: loud
+      password: "{{ hellograder | mkpasswd -m sha-512 }}"
+      update_password: always
+
+  - name: create cybe466grader
+    user:
+      name: cybe466grader
+      createhome: True
+      uid: 1041
+      group: admin,sudo
+
+  - name: PASSWORDS | Update grader password
+    user:
+      name: cybe466grader
+      password: "{{ hellograder | mkpasswd -m sha-512 }}"
+      update_password: always
