@@ -26,7 +26,7 @@
   - name: PASSWORDS | Update grader password
     user:
       name: cybe466grader
-      password: password: $6$C4zm.pBZt$ProPf1z41.JVLpY2tLTkvsWoCp2pEAc2LUwgvoQSUesylbr13LYTsB3ERDlzGMnLoIQbNQG3ABDXJ.uD.6NEe1
+      password: $6$C4zm.pBZt$ProPf1z41.JVLpY2tLTkvsWoCp2pEAc2LUwgvoQSUesylbr13LYTsB3ERDlzGMnLoIQbNQG3ABDXJ.uD.6NEe1
       update_password: always
 
   - name: create dbremoteuser
