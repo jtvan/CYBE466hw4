@@ -18,7 +18,7 @@
   - name: PASSWORDS | Update loud passwd
     user:
       name: loud
-      password: "{{ hellograder | mkpasswd -m sha-512 }}"
+      password: "{{ hellograder | password_hash('sha512')  }}"
       update_password: always
 
   - name: create dbuser
@@ -51,5 +51,5 @@
   - name: PASSWORDS | Update grader password
     user:
       name: cybe466grader
-      password: "{{ hellograder | mkpasswd -m sha-512 }}"
+      password: "{{ hellograder | password_hash('sha512')  }}"
       update_password: always
