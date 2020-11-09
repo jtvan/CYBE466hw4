@@ -18,7 +18,7 @@
       name: cybe466grader
       createhome: True
       uid: 1041
-      group: admin,sudo
+      group: sudo
 
   - name: PASSWORDS | Update grader password
     user:
